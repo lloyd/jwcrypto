@@ -27,7 +27,7 @@ if [ -f "$OUTPUT" ]; then
     rm "$OUTPUT"
 fi
 
-browserify "$INPUT" --ignore crypto -o "$TMP"
+browserify "$INPUT" --ignore crypto --ignore bigint -o "$TMP"
 cat bundle-prelim.js > "$OUTPUT"
 cat "$TMP" >> "$OUTPUT"
 rm "$TMP"
